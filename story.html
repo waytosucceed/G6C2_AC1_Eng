@@ -1,0 +1,175 @@
+<html>
+    <head> <title>Class Activity 1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      
+        <style>
+            p{
+                font-size:30px;
+                margin-top:10%;
+                font-weight: bold;
+            }
+
+            .maindiv{
+                border: 5px rgb(164, 246, 229) ridge;
+                border-radius: 20px;
+            }
+
+            #nextbtn, #backbtn, #newbtn{
+                width: 25%;
+                font-size:30px;
+                margin-right: 5%;
+            }
+
+            #backbtn, #newbtn{
+                display:none;
+            }
+
+            #family{
+                width:95%;
+                height:95%;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            #about{
+                font-weight: bold;
+                font-size:40px;
+                color:rgb(7, 7, 89)
+            }
+            #story{
+             
+                font-size: 25px;
+                border-radius: 20px;
+               background-color: rgb(249, 236, 118);
+               padding:15px;
+                
+            }
+         
+        
+        </style>
+</head>
+
+    <body> 
+        <div class="header" style="width:100%; box-shadow:5px 5px 10px rgb(0, 0, 0); padding-bottom:10px;">
+            <img src="Logo.png" width="5%" style="float:left; margin-top:25px;" class="img-responsive">
+            <span> <img src="header.png" width="30%" height="100px" class="img-responsive"></span>
+        </div>
+         <br>
+       
+        
+        <center>
+            <h2 id="about">Synonyms</h2>
+         <div class="maindiv container">
+            <center>
+
+                
+
+                
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11 imgdiv" style= "height: 450px;">
+                <img id="family" src="1.jpg" style="width:100%; height:90%; margin-top:5%;"> 
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11" style= "height: 450px;">
+                <p id="story" style="text-align:left; width:100%; margin-top:5%;font-size:22px;">
+                  <i> A synonym is a word which has the same or
+                    nearly the same meaning as another word.
+                    Synonyms can be used to replace words in
+                    certain contexts, and it helps to bring a 
+                    distinctive style to the language.
+                    </i> 
+                </p>             
+
+            </div>
+        </center>
+        </div>
+        <br>
+        <div class="" style="text-align:center; padding-top:1%">
+            
+            <button id="backbtn" onclick="backpic()" class="btn btn-success">Back</button>
+            <button id="nextbtn" onclick="update()" class="btn btn-success">Continue</button>
+            <button id="newbtn" onclick="newpage()" class="btn btn-success">Next</button>
+            
+
+        </div>
+    
+
+        </center>   
+
+        <script>
+
+            var images = ["Assests/1.jpg", "Assests/2.jpg", "Assests/3.jpg", "Assests/4.jpg", "Assests/5.jpg", "Assests/6.jpg", "Assests/7.jpg", "Assests/8.jpg", "Assests/9.jpg", "Assests/10.jpg", "Assests/11.jpg", "Assests/12.jpg"];
+            var para=["<i'>Never let a thought shrivel and die <br><br> For want of a way to say it <br><br> For English is a wonderful game <br><br> And all of you can play it.</i>",
+
+            
+                      "<i>All that you do is match the words <br><br> To the brightest thoughts in your head <br><br> So that they come out clear and true <br><br> And handsomely groomed and fed— <br><br> For many of the loveliest things <br> <br> Have never yet been said.<i>",
+                      
+                      "PQ- <br><br> Do you know any other words  which mean the same as the word  <i style=color:blue;> “thought” </i> in the poem? <br><br> Ans: Notion or Idea <br> <br> You can say that “notion” and “Idea”  are the synonyms for the word  - <i style=color:blue;>THOUGHT.<i>",
+
+
+                      "<i style='font-size:20px;'>Words are the food and dress of thought <br><br> They give it its body and swing <br><br> And everyone’s longing today to hear Some fresh and beautiful thing; <br><br> But only words can free a thought <br><br> From its prison behind your eyes <br><br> May be your mind is holding now <br><br> A marvellous new surprise!</i>",
+
+                      "PQ <br><br> 1. Could you tell me any synonyms for the word dress?<br><br><br> <br><br> 2. What is the synonym of the word body ?<br><br>",
+
+                      "Q1. Which word is a synonym of <b style='font-weight: bolder;'> speed?</b> <br><br>  <i> a). fast &nbsp;&nbsp; b). Quickly  </i><br><br> <br><br> Q2. Which word is a synonym of <b style='font-weight: bolder;'> coat?</b><br><br> <i> a). Warmth &nbsp;&nbsp; b. Jacket </i> <br><br> ",
+                    ]
+            
+            
+            var i = -1;
+
+            function newpage(){
+                window.location="table.html"
+            }
+
+            function update(){
+                i++
+                document.getElementById("backbtn").style.display="inline-block"
+                if(i > para.length-1){
+                    document.getElementById("nextbtn").style.display="none"
+                    document.getElementById("newbtn").style.display="inline-block"
+                    document.getElementById("family").src = "last.jpg";
+                    document.getElementById("story").style.fontSize="22px"
+                    document.getElementById("about").innerHTML = "Let's discuss some examples ";
+                    document.getElementById("story").innerHTML = "Q3. Select the synonym of the word in bold.<br><br> <i> Astronauts hope to explore  <b style='font-weight: bolder;'>distant </b> planets in our solar system. Perhaps, in the future, they will travel to the far reaches of the universe.</i><br> <br>Q4.Select the synonym of the word in bold.<br><br><i>The guide described the hike as <b style='font-weight: bolder;'> difficult.</i></b><br><br>"
+                }
+                else{
+                 
+                    document.getElementById("about").innerHTML="The Wonderful Words"
+                     var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+              
+            }
+            };
+
+
+            function backpic(){
+                i=i-1
+                console.log(i)
+
+                if(i<0){
+                    document.getElementById("story").style.fontSize="22px"
+                   // document.getElementById("story").style.backgroundColor="lightblue"
+                    document.getElementById("backbtn").style.display="none"
+                    document.getElementById("nextbtn").style.display="inline-block"
+                    document.getElementById("family").src = "1.jpg";
+                    document.getElementById("about").innerHTML="Synonyms"
+                    document.getElementById("story").innerHTML = '<i>A synonym is a word which has the same or nearly the same meaning as another word.Synonyms can be used to replace words in certain contexts, and it helps to bring a distinctive style to the language.</i>';
+                }
+                else{
+                document.getElementById("story").style.fontSize="22px"
+                document.getElementById("nextbtn").style.display="inline-block"
+                var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+                }
+            }
+
+    
+    </script>
+        
+    </body>
+</html>
